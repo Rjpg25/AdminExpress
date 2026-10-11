@@ -1,0 +1,271 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #292d48;
+  background-color: #f7f7f7;
+}
+
+/* Escritorio: dos columnas */
+.login-page {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.brand-panel {
+  display: grid;
+  place-items: center;
+  background-color: #075ce0;
+  color: #ffffff;
+}
+
+.brand-panel h1 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.form-panel {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: clamp(32px, 4vw, 60px);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-box h2 {
+  margin-bottom: 18px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.description {
+  margin-bottom: 48px;
+  color: #8a8d97;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Campos */
+.field-group {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.password-wrapper {
+  grid-template-columns: 18px minmax(0, 1fr) 22px;
+}
+
+.input-wrapper:focus-within {
+  outline: 2px solid #075ce0;
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: #292d48;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+input::placeholder {
+  color: #b0b2ba;
+}
+
+.eye-button {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 28px;
+  border: none;
+  color: #9699a3;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.eye-button[aria-pressed="true"] {
+  color: #075ce0;
+}
+
+/* Recuperación de contraseña */
+.recovery {
+  margin-top: -2px;
+  text-align: right;
+  font-size: 11px;
+}
+
+.recovery summary {
+  display: inline-block;
+  color: #075ce0;
+  cursor: pointer;
+}
+
+.recovery p {
+  margin-top: 8px;
+  color: #8a8d97;
+  line-height: 1.5;
+}
+
+/* Botón de acceso */
+.sign-in-button {
+  width: 166px;
+  height: 48px;
+  margin-top: 48px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #075ce0;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sign-in-button:hover {
+  background-color: #064cba;
+}
+
+.sign-in-button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #075ce0;
+  outline-offset: 4px;
+}
+
+.form-message {
+  margin-top: 14px;
+  color: #075ce0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.form-message:empty {
+  display: none;
+}
+
+/* Celulares y tablets pequeñas */
+@media (max-width: 768px) {
+  .login-page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brand-panel {
+    display: none;
+  }
+
+  .form-panel {
+    place-items: start center;
+    padding: 56px 24px 36px;
+  }
+
+  .login-box {
+    max-width: 380px;
+  }
+
+  .description {
+    margin-bottom: 36px;
+    font-size: 14px;
+  }
+
+  .field-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  .input-wrapper {
+    height: 52px;
+  }
+
+  .password-wrapper {
+    grid-template-columns: 18px minmax(0, 1fr) 32px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  .eye-button {
+    width: 32px;
+    height: 44px;
+  }
+
+  .recovery {
+    font-size: 12px;
+  }
+
+  .recovery summary {
+    display: inline-grid;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+  }
+
+  .sign-in-button {
+    width: 100%;
+    margin-top: 28px;
+    font-size: 14px;
+  }
+
+  .form-message {
+    font-size: 12px;
+  }
+}
+
+/* Celulares estrechos */
+@media (max-width: 360px) {
+  .form-panel {
+    padding: 40px 20px 28px;
+  }
+
+  .login-box h2 {
+    font-size: 23px;
+  }
+}
